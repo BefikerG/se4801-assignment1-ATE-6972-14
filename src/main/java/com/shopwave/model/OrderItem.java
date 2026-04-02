@@ -24,5 +24,5 @@ public class OrderItem {
     private Product product;
 
     private Integer quantity;
-    private BigDecimal priceAtPurchase;
+    private BigDecimal unitPrice;
 }

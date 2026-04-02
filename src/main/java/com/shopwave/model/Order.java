@@ -7,6 +7,8 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 //ID: ATE/6972/14
 
 @Entity
@@ -25,7 +27,7 @@ public class Order {
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> items;
 
-    @PrePersist
+   @CreationTimestamp
     protected void onCreate() {
         this.orderDate = LocalDateTime.now();
     }

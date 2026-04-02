@@ -1,43 +1,55 @@
 package com.shopwave.model;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.Positive;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-// ID : ATE/6972/14
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+// Student Number: ATE-3156-14
 @Entity
-@Data
-@NoArgsConstructor
+@Table(name = "products")
+@Getter @Setter @NoArgsConstructor
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; // Primary key
+    private Long id;
 
-    private String name; // Display name
+    @NotBlank(message = "Product name is required")
+    private String name;
 
-    @Column(length = 1000)
     private String description;
 
-    @Positive(message = "Price must be a positive value.")
+    @Positive(message = "Price must be positive")
     private BigDecimal price;
 
-    @Min(0)
+    @Min(value = 0, message = "Stock cannot be negative")
     private Integer stock;
 
+    // Many products can belong to one category
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
-    private Category category; //
+    private Category category;
 
+    @Column(updatable = false)
     private LocalDateTime createdAt;
 
-    // This is a custom lifecycle hook i added to ensure the timestamp is set
-    // automatically
+    // This runs right before the database saves a new product for the first time
     @PrePersist
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();
