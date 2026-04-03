@@ -1,5 +1,113 @@
-SE4801: Enterprise Application Development - Assignment 1Student Name: Befiker Gezhaegn Student Number: ATE/6972/14 University: Addis Ababa University, Department of Software Engineering Project OverviewThis repository contains the implementation for Assignment 1 (2026), covering Java 21 fundamentals and the initial setup of the ShopWave-Starter enterprise web application using Spring Boot 3.x.Repository Structuresrc/: Full source code for the Spring Boot application, including Domain Models, Repositories, Services, and Controllers.pom.xml: Maven configuration file containing project dependencies (Spring Web, Data JPA, H2, Lombok, Actuator).README.md: Project documentation and setup instructions.Technical SpecificationsLanguage: Java 21 Framework: Spring Boot 3.x Database: H2 In-Memory Database Build Tool: Maven Features ImplementedSection B: Java FundamentalsCollections & Generics: Implementation of a generic findMax method.OOP: Abstract product hierarchy (Physical vs. Digital) with custom discount logic.Streams: Refactoring of complex legacy loops into high-performance functional pipelines.Concurrency: Thread safety demonstrations and Java 21 Record implementations.Section C: ShopWave-Starter (Practical)REST API: Endpoints for product management, paginated retrieval, and advanced searching.Persistence: Spring Data JPA repositories with custom derived queries.Validation: Use of @Valid and custom RuntimeException handling for data integrity.Testing: Unit and integration testing using Mockito, @WebMvcTest, and @DataJpaTest.How to Build and RunPrerequisitesJDK 21Maven 3.xBuild the ProjectTo compile the code and package it into a JAR file:Bashmvn clean package
+# 🚀 SE 4801: Enterprise Application Development — Assignment 1
 
-http://googleusercontent.com/immersive_entry_chip/0
-http://googleusercontent.com/immersive_entry_chip/1
-http://googleusercontent.com/immersive_entry_chip/2
+**Addis Ababa University**  
+Department of Software Engineering  
+
+- **Student Name:** Befiker Gezahegn  
+- **Student ID:** ATE/6972/14  
+- **Academic Year:** 2026  
+- **Instructor:** Abel Tadesse
+
+---
+
+## 📌 Project Overview
+
+This repository contains the full implementation of **Assignment 1**, focusing on advanced **Java 21 concepts** and the development of the **ShopWave-Starter** enterprise backend using **Spring Boot 3.x**.
+
+### 🔍 Key Demonstrations
+
+- **Enterprise Design Patterns**
+  - Layered Architecture
+  - DTO (Data Transfer Object) Pattern
+
+- **SOLID Principles**
+  - Clean, maintainable, and loosely coupled code
+
+- **Modern Java Features**
+  - Streams API
+  - Generics
+  - Java 21 Records
+
+- **Automated Testing**
+  - Unit & Integration Testing with JUnit 5 and Mockito
+
+---
+
+## 🛠️ Tech Stack
+
+| Component     | Technology              |
+|--------------|------------------------|
+| Language      | Java 21 (OpenJDK)      |
+| Framework     | Spring Boot 3.5.12     |
+| Build Tool    | Apache Maven           |
+| Database      | H2 (In-Memory)         |
+| Testing       | JUnit 5, Mockito, AssertJ |
+| Dev Tools     | Lombok, Spring Boot Actuator |
+
+---
+
+## 📁 Repository Structure
+
+```bash
+se4801-assignment1-ATE697214/
+│
+├── src/
+│   ├── main/
+│   │   └── java/com/shopwave/
+│   │       ├── controller/     # REST API endpoints (Section C4)
+│   │       ├── service/        # Business logic layer (Section C2)
+│   │       ├── repository/     # Data access layer (Section C1)
+│   │       ├── dto/            # Data Transfer Objects
+│   │       └── model/          # JPA entity classes
+│   │
+│   └── test/
+│       └── java/com/shopwave/
+│           └── ...             # Unit & integration tests (Section C5)
+│
+├── pom.xml                     # Maven configuration & dependencies
+└── README.md                  # Project documentation
+```
+
+## ⚙️ Build the Project
+
+```bash
+./mvnw clean package
+```
+- Compiles all source code
+-	Runs all tests
+-	Generates a .jar file in the target/ directory
+
+
+## ▶️ Run the Application
+
+```bash
+./mvnw spring-boot:run
+```
+- Default Port: 8080
+- H2 Console: http://localhost:8080/h2-console
+
+## 🧪 Run Tests
+
+```bash
+./mvnw test
+```
+- Runs unit tests and integration tests
+
+## 📊 Testing Coverage
+
+- **Test Modules**
+  - ProductServiceTest
+  - Tests business logic
+	-	Uses mocked repository layer
+	-	ProductControllerTest
+	-	Validates REST endpoints
+	-	Checks HTTP status codes and responses
+	-	ShopwaveStarterApplicationTests
+	-	Verifies Spring Boot application context loads successfully
+
+---
+
+- **Coverage Focus** 
+  -	Business logic validation
+	-	API contract correctness
+	-	Application startup integrity
