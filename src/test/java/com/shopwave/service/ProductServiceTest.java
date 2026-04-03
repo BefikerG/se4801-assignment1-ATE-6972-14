@@ -18,6 +18,8 @@ import com.shopwave.exception.ProductNotFoundException;
 import com.shopwave.model.Product;
 import com.shopwave.repository.ProductRepository;
 
+// ID: ATE/6972/14
+
 @ExtendWith(MockitoExtension.class)
 public class ProductServiceTest {
 
@@ -50,10 +52,10 @@ public class ProductServiceTest {
 
      @Test
     void testGetProductById_NotFound() {
-        // Arrange: Tell the mock database to return empty when asked for an ID that doesn't exist
+        // Tell the mock database to return empty when asked for an ID that doesn't exist
         when(productRepository.findById(99L)).thenReturn(Optional.empty());
 
-        // Act & Assert: Verify that asking for ID 99 throws our custom 404 exception
+        // Verify that asking for ID 99 throws our custom 404 exception
         assertThrows(ProductNotFoundException.class, () -> {
             productService.getProductById(99L);
         });

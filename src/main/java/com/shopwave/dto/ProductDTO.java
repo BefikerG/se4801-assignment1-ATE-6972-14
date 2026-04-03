@@ -9,8 +9,6 @@ import lombok.NoArgsConstructor;
 
 // ID: ATE/6972/14
 
-// Necessary for the mapper to function.
-
 @Size
 @Data
 @NoArgsConstructor

@@ -11,7 +11,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-// Student Number: ATE-3156-14
+// ID: ATE/6972/14
 @Entity
 @Table(name = "categories")
 @Getter @Setter @NoArgsConstructor

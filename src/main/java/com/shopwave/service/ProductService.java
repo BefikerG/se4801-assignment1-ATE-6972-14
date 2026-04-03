@@ -1,11 +1,13 @@
 package com.shopwave.service;
 
-import com.shopwave.model.Product;
-import com.shopwave.repository.ProductRepository;
-import com.shopwave.exception.ProductNotFoundException;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import java.util.List;
+
+import com.shopwave.exception.ProductNotFoundException;
+import com.shopwave.model.Product;
+import com.shopwave.repository.ProductRepository;
 
 // ID: ATE/6972/14
 
@@ -32,12 +34,10 @@ public class ProductService {
                 .orElseThrow(() -> new ProductNotFoundException("Product not found with ID: " + id));
     }
 
-    // ADDED: Needed for the Controller's POST method
     public Product createProduct(Product product) {
         return productRepository.save(product);
     }
 
-    // ADDED: Needed for the Controller's DELETE method
     public void deleteProduct(Long id) {
         if (!productRepository.existsById(id)) {
             throw new ProductNotFoundException("Cannot delete. ID " + id + " not found.");
