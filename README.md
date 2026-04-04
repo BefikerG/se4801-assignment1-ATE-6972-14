@@ -111,3 +111,39 @@ se4801-assignment1-ATE697214/
   -	Business logic validation
 	-	API contract correctness
 	-	Application startup integrity
+
+---
+
+## 🤖 AI Assistance Disclosure
+
+This project was primarily designed and implemented independently, with AI tools used selectively to support productivity and improve code quality where appropriate.
+
+### Scope of AI Assistance
+
+AI was utilized in the following areas:
+
+- **Technical Documentation**
+  - Assisted in structuring and refining the written report (PDF)
+  - Improved clarity, grammar, and professional tone  
+
+- **Code Refactoring & Optimization**
+  - Suggested improvements for readability and maintainability  
+  - Assisted with Java Stream operations and clean code practices  
+
+- **Repetitive / Boilerplate Code**
+  - Supported generation of standard or repetitive class structures  
+  - Reduced manual effort for routine implementation patterns  
+
+---
+
+### Author Contribution
+
+- All **core architecture decisions** (system design, layering, and logic flow) were made independently  
+- All **key components** (entities, services, controllers) were implemented and validated by the author  
+- AI was used strictly as a **supporting tool**, not as a replacement for understanding or development  
+
+---
+
+### Statement of Integrity
+
+The use of AI in this project aligns with academic guidelines and was limited to enhancing efficiency, documentation quality, and code refinement, while maintaining full ownership and understanding of the final implementation.
